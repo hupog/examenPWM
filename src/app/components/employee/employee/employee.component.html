@@ -1,0 +1,9 @@
+<h2 class="mx-2">Lista de Trabajadores</h2>
+<a class="btn btn-primary mx-2" routerLink="/employee/new">Añadir</a>
+<ul>
+<li class="list-group-item" *ngFor="let e of employees | async">
+{{ e.id }} - {{ e.name }} - {{ e.department }}
+<a class="btn btn-warning btn-sm mx-2" [routerLink]="['/employee/edit', e.id]">Editar</a>
+<a class="btn btn-danger btn-sm mx-2" (click)="deleteEmployee(e.id!)">Eliminar</a>
+</li>
+</ul>

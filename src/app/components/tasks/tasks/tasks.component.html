@@ -1,0 +1,9 @@
+<h2 class="mx-2">Lista de Tareas</h2>
+<a class="btn btn-primary mx-2" routerLink="/tasks/new">Añadir</a>
+<ul>
+<li class="list-group-item" *ngFor="let t of tasks | async">
+{{ t.id }} - {{ t.employeeId }} - {{ t.projectId }} - {{ t.description }}
+<a class="btn btn-warning btn-sm mx-2" [routerLink]="['/tasks/edit', t.id]">Editar</a>
+<a class="btn btn-danger btn-sm mx-2" (click)="deleteTask(t.id!)">Eliminar</a>
+</li>
+</ul>

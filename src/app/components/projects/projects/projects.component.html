@@ -1,0 +1,9 @@
+<h2 class="mx-2">Lista de Proyectos</h2>
+<a class="btn btn-primary mx-2" routerLink="/projects/new">Añadir</a>
+<ul>
+<li class="list-group-item" *ngFor="let p of projects | async">
+{{ p.id }} - {{ p.name }} - {{ p.description }}
+<a class="btn btn-warning btn-sm mx-2" [routerLink]="['/projects/edit', p.id]">Editar</a>
+<a class="btn btn-danger btn-sm mx-2" (click)="deleteProject(p.id!)">Eliminar</a>
+</li>
+</ul>

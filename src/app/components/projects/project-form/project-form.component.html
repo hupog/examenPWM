@@ -1,0 +1,16 @@
+<div class="container">
+    <h2>Formulario de Proyecto</h2>
+    <form (ngSubmit)="onSubmit()" #form="ngForm">
+        <div class="form-group">
+            <label for="name">Nombre</label>
+            <input type="text" class="form-control" id="name" required [(ngModel)]="project.name" name="name">
+        </div>
+        <div class="form-group">
+            <label for="description">Descripción</label>
+            <input type="text" class="form-control" id="description" required [(ngModel)]="project.description" name="description">
+        </div>
+        <button type="submit" class="btn btn-primary">Guardar</button>
+        <a type="button" class="btn btn-secondary" routerLink="/projects">Cancelar</a>
+        <button type="button" class="btn btn-danger" (click)="deleteProject()">Eliminar</button>
+    </form>
+</div>

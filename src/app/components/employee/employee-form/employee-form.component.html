@@ -1,0 +1,16 @@
+<div class="container">
+    <h2>Formulario de Empleado</h2>
+    <form (ngSubmit)="onSubmit()" #form="ngForm">
+        <div class="form-group">
+            <label for="name">Nombre</label>
+            <input type="text" class="form-control" id="name" required [(ngModel)]="employee.name" name="name">
+        </div>
+        <div class="form-group">
+            <label for="department">Departamento</label>
+            <input type="text" class="form-control" id="department" required [(ngModel)]="employee.department" name="department">
+        </div>
+        <button type="submit" class="btn btn-primary">Guardar</button>
+        <a type="button" class="btn btn-secondary" routerLink="/employees">Cancelar</a>
+        <button type="button" class="btn btn-danger" (click)="deleteEmployee()">Eliminar</button>
+    </form>
+</div>
