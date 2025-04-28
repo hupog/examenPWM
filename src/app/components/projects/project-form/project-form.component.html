@@ -1,5 +1,7 @@
 <div class="container">
-    <h2>Formulario de Proyecto</h2>
+    <div class="row flex justify-content-center align-items-center">
+        <h2 class="text-center col-4">Formulario de Proyecto</h2>
+    </div>
     <form (ngSubmit)="onSubmit()" #form="ngForm">
         <div class="form-group">
             <label for="name">Nombre</label>
@@ -9,8 +11,10 @@
             <label for="description">Descripción</label>
             <input type="text" class="form-control" id="description" required [(ngModel)]="project.description" name="description">
         </div>
-        <button type="submit" class="btn btn-primary">Guardar</button>
-        <a type="button" class="btn btn-secondary" routerLink="/projects">Cancelar</a>
-        <button type="button" class="btn btn-danger" (click)="deleteProject()">Eliminar</button>
+        <div class="row flex justify-content-center align-items-center mt-2">
+            <button type="submit" class="btn btn-primary col-1 mx-2">Guardar</button>
+            <a type="button" class="btn btn-secondary col-1 mx-2" routerLink="/projects">Cancelar</a>
+            <button type="button" class="btn btn-danger col-1 mx-2" (click)="deleteProject()">Eliminar</button>
+        </div>
     </form>
 </div>

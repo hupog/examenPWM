@@ -1,5 +1,7 @@
 <div class="container">
-    <h2>Formulario de Tareas</h2>
+    <div class="row flex justify-content-center align-items-center">
+        <h2 class="text-center col-4">Formulario de Tareas</h2>
+    </div>
     <form (ngSubmit)="onSubmit()" #form="ngForm">
         <div class="form-group">
             <label for="employeeId">Empleado</label>
@@ -13,7 +15,9 @@
             <label for="description">Descripción</label>
             <input type="text" class="form-control" id="description" required [(ngModel)]="task.description" name="description">
         </div>
-        <button type="submit" class="btn btn-primary">Guardar</button>
-        <button type="button" class="btn btn-danger" (click)="deleteTask()">Eliminar</button>
+        <div class="row flex justify-content-center align-items-center mt-2">
+            <button type="submit" class="btn btn-primary col-1 mx-2">Guardar</button>
+            <button type="button" class="btn btn-danger col-1 mx-2" (click)="deleteTask()">Eliminar</button>
+        </div>
     </form>
 </div>

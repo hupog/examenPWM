@@ -1,9 +1,31 @@
-<h2 class="mx-2">Lista de Tareas</h2>
-<a class="btn btn-primary mx-2" routerLink="/tasks/new">Añadir</a>
+<div class="row flex justify-content-center align-items-center">
+    <h2 class="col-2">Lista de Tareas</h2>
+    </div>
+<div class="row flex justify-content-center align-items-center">
+    <a class="btn btn-primary col-3" routerLink="/tasks/new">Añadir</a>
+</div>
 <ul>
-<li class="list-group-item" *ngFor="let t of tasks | async">
-{{ t.id }} - {{ t.employeeId }} - {{ t.projectId }} - {{ t.description }}
-<a class="btn btn-warning btn-sm mx-2" [routerLink]="['/tasks/edit', t.id]">Editar</a>
-<a class="btn btn-danger btn-sm mx-2" (click)="deleteTask(t.id!)">Eliminar</a>
-</li>
+    <table class="table table-striped">
+        <thead>
+            <tr>
+                <th>ID</th>
+                <th>Empleado</th>
+                <th>Proyecto</th>
+                <th>Descripción</th>
+                <th>Acciones</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr *ngFor="let t of tasks | async">
+                <td>{{ t.id }}</td>
+                <td>{{ t.employeeId }}</td>
+                <td>{{ t.projectId }}</td>
+                <td>{{ t.description }}</td>
+                <td>
+                    <a class="btn btn-warning btn-sm mx-2" [routerLink]="['/tasks/edit', t.id]">Editar</a>
+                    <a class="btn btn-danger btn-sm mx-2" (click)="deleteTask(t.id!)">Eliminar</a>
+                </td>
+            </tr>
+        </tbody>
+    </table>
 </ul>
